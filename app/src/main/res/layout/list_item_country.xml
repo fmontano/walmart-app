@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/spacing_8"
+    android:layout_marginHorizontal="@dimen/spacing_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/flagImage"
+        android:layout_width="@dimen/flag_image_size"
+        android:layout_height="@dimen/flag_image_size"
+        app:strokeWidth="1dp"
+        android:padding="@dimen/spacing_4"
+        app:strokeColor="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <Space
+        android:id="@+id/flagImageSpacing"
+        android:layout_width="@dimen/spacing_8"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/flagImage"
+        app:layout_constraintTop_toTopOf="@id/flagImage" />
+
+    <TextView
+        android:id="@+id/countryNameAndRegion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/flagImageSpacing"
+        app:layout_constraintEnd_toStartOf="@id/countryCode"
+        android:maxLines="3"
+        android:ellipsize="end"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        tools:text="United States of America United States of America" />
+
+    <TextView
+        android:id="@+id/countryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        tools:text="US" />
+
+    <TextView
+        android:id="@+id/itemCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_4"
+        app:layout_constraintTop_toBottomOf="@id/countryNameAndRegion"
+        app:layout_constraintStart_toEndOf="@id/flagImageSpacing"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        tools:text="Washington, D.C." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
